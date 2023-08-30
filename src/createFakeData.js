@@ -1,4 +1,4 @@
-import Post from './model/post';
+import Post from './models/post';
 
 export default function createFakeData() {
   // 0, 1, 2, ... 39로 이뤄진 배열을 생성한 후 포스트 데이터로 전환

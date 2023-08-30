@@ -1,4 +1,4 @@
-import Post from '../../model/post';
+import Post from '../../models/post';
 import mongoose from 'mongoose';
 import Joi from '../../../node_modules/joi/lib/index';
 
