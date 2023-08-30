@@ -1,5 +1,7 @@
-const Router = require('koa-router');
-const postsCtrl = require('./posts.ctrl');
+// const Router = require('koa-router');
+// const postsCtrl = require('./posts.ctrl');
+import Router from 'koa-router';
+import * as postsCtrl from './posts.ctrl';
 
 const posts = new Router();
 
@@ -18,4 +20,4 @@ posts.delete('/:id', postsCtrl.remove);
 posts.put('/:id', postsCtrl.replace);
 posts.patch('/:id', postsCtrl.update);
 
-module.exports = posts;
+export default posts;
