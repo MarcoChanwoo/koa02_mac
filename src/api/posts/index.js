@@ -15,9 +15,12 @@ const posts = new Router();
 
 posts.get('/', postsCtrl.list);
 posts.post('/', postsCtrl.write);
-posts.get('/:id', postsCtrl.read);
-posts.delete('/:id', postsCtrl.remove);
-posts.patch('/:id', postsCtrl.update);
-// posts.put('/:id', postsCtrl.replace);
+
+const post = new Router(); // /api/posts/:id
+posts.get('/', postsCtrl.read); // postsCtrl.checkObjectId 미들웨어 추가
+posts.delete('/', postsCtrl.remove);
+posts.patch('/', postsCtrl.update);
+
+posts.use('/:id', postsCtrl.checkObjectId, post.routes());
 
 export default posts;
